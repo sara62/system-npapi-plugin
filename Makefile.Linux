@@ -1,0 +1,13 @@
+
+.PHONY: all clean install
+
+all:
+	gcc -shared -Wall main.c PluginObject.c SystemObject.c -o libsystem.so
+
+clean:
+	rm -f *.o
+	rm -f *.so
+
+install:
+	cp libsystem.so /usr/lib/mozilla/plugins/
+

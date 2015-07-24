@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>System Plugin Demo</title>
+</script>
+</head>
+<body>
+<h1>System Plugin Demo</h1>
+<hr>
+<script>
+//var system = document.getElementById("system").system;
+//document.write('system.version = ' + system.version + '<br>');
+//document.write(system.exec('zenity --file-selection'));
+function selectfile() {
+	var system = document.getElementById('system').system;
+	var path = system.exec('zenity --file-selection');
+	document.getElementById('filepath').innerHTML = path;
+}
+
+</script>
+
+<embed name="plugin" type="application/x-system" width="0" height="0" id="system"></embed>
+<br>
+
+<input type="button" value="Select File" onclick="selectfile();">
+<span id="filepath"></span>
+
+</body>
+</html>
